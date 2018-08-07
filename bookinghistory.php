@@ -85,11 +85,7 @@ include 'config.php';
                 <span class="sr-only">First</span>
                </a>
                </li>
-           <?php  } else if($curpage == $startpage){?>
-                    <li><a class="page-link" href="?pagenum=<?php echo $curpage; ?>"><?php echo $curpage;?></a></li>
-                     <li><a class="page-link" href="?pagenum=<?php echo $nextpage; ?>"><?php echo $nextpage;?></a></li>
-                    <li><a class="page-link" href="?pagenum=<?php echo $nextpage+1; ?>"><?php echo $nextpage+1;?></a></li>
-              </a>
+           
           <?php  } ?>
    
     <?php if($curpage >= 2){
