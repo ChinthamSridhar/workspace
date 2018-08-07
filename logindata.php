@@ -13,6 +13,7 @@
            header ('location:admin.php');
         }
     }
+	
     $query = "select id,username,password from user u where username='".$_POST['username']."' and password='".$_POST['password']."'";
     $result = mysqli_query($conn,$query);
     if($result){
@@ -34,7 +35,7 @@
             {
                 $_SESSION['user_id'] = $record['id'];
                 $_SESSION['role_id'] = $role_name['id'];
-                header('location:maindup.php');
+                header('location:customer.php');
             } else if($role_name['role_name'] == 'admin')
             {
                 $_SESSION['user_id'] = $record['id'];
@@ -74,8 +75,7 @@
         </form>
     </body>  
     <?php
-    echo '<center><h4>Login failed. Try again</h4></center>';
-    //echo"<a href='login.php'>Login</a>";
+    header ("location: login.php?flash");
         }
     } 
 else 
