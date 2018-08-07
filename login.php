@@ -37,11 +37,20 @@ include 'config.php';
     </script>
 </head>
 <body style="background-color:rgb(255,99,71,0.5);">
-    <form  action="main.php" method="post">
+    <form  action="index.php" method="post">
         <input  type="submit" class= "btn btn-warning btn-lg" value="HOME">
     </form>
     <center><br><br>
+	
+
     <h4>Login Page</h4>
+	
+	<?php
+	if(isset($_GET['flash']))
+	{
+		echo '<h4 style="color:red">username or password wrong</h4>';
+	}
+	?>
     <form name="myForm" action="logindata.php" method="post" onsubmit = "return validateForm();" autocomplete="off"><br><br>
             Username <input type="text" name="username" ><br><br>
             Password <input type="password" name="password"> <br><br>
@@ -50,7 +59,6 @@ include 'config.php';
         
          <font color="red">New User?? </font> &nbsp;<a href="register.php">SignUp</a>
     </center><br>
-    
-    
+	
 </body>  
 </html>
